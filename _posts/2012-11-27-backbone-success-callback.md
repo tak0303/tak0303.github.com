@@ -1,7 +1,7 @@
 ---
 layout: post
 title: Backbone.Collectionのfetch methodでstatus codeは200なのにerror
-tags: [programming, backbone, JavaScript]
+tags: [ backbone, JavaScript]
 ---
 
 Backbone.jsを使っていてあれ？ってなったこととその解決方法
