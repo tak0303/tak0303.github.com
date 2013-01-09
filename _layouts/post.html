@@ -1,0 +1,12 @@
+---
+layout: default
+---
+<article class='post_article'>
+  <h2 class='post_title'>{{ page.title }}</h2>
+  {% if page.date %}
+  <div class='postdate'>Posted on {{ page.date | date: "%b %e %Y" }}</div>
+  {% endif %}
+  <div class='article_body'>
+    {{content}}
+  </div>
+</article>

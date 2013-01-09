@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html>
+  {% include head.html %}
+  <body>
+    {% include header.html %}
+    <div id='content'>
+      <div class='container'>
+        {{ content }}
+        {% unless page.url == '/index.html' %}
+        {% include footer.html %}
+        {% endunless %}
+      </div>
+    </div>
+  </body>
+</html>

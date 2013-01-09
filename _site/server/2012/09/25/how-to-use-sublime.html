@@ -1,0 +1,292 @@
+<!DOCTYPE html>
+<html>
+  <head>
+  <meta content='text/html; charset=utf8' http-equiv='Content-Type' />
+  <title>tak0303 | Sublime Text 2がプログラミング人生を変えるかも知れない</title>
+  <meta content='hogehoge' name='description' />
+  <link href='/assets/css/main.css' rel='stylesheet' />
+  <link href='/assets/css/pygments.css' rel='stylesheet' />
+  <link href='http://fonts.googleapis.com/css?family=Open+Sans:400,300' rel='stylesheet' />
+  <link href='/assets/css/pictonic.css' rel='stylesheet' />
+  <!--[if IE]>
+    <script src='/assets/js/pictonic.min.js'></script>
+  <![endif]-->
+</head>
+
+  <body>
+    <div id='header'>
+  <div class='container_header'>
+    <section class='name'><a href='/'>
+      tak
+      <span>0303</span>
+    </a></section>
+    <ul class='menu'>
+      <!-- / you can add links with just copy -->
+      <li>
+        <a href='/about.html'>about</a>
+      </li>
+    </ul>
+  </div>
+</div>
+
+    <div id='content'>
+      <div class='container'>
+        <article class='post_article'>
+  <h2 class='post_title'>Sublime Text 2がプログラミング人生を変えるかも知れない</h2>
+  
+  <div class='postdate'>Posted on Sep 25 2012</div>
+  
+  <div class='article_body'>
+    <h1 id='id43'>はじめに</h1>
+
+<p>最近話題のエディタ,SublimeText2,ボクもかなり気に入っています. なんといってもその豊富なプラグイン(vim,emacsには劣るが),そしてそれらの導入コストの低さなどが優れてSublimeTextの優れた点ではないでしょうか.</p>
+
+<p>今回はボクがSublimeを使い始めてから入れたプラグイン,設定,よく使うキーバインドなどをまとめて行こうと思います.</p>
+
+<h1 id='id44'>インストール,初期設定</h1>
+
+<p>SublimeTextは本家のサイトからダウンロードできます.</p>
+
+<p><a href='http://www.sublimetext.com/'>http://www.sublimetext.com/</a></p>
+
+<p>headerのdownloadから自分の環境にあったものをダウンロードしてください.</p>
+
+<p>今回,記事中ではボクの環境がmacなのでmacのキーバインド,操作方法で紹介します.windowsの方は脳内変換をよろしくお願いします.</p>
+
+<p>で、インストールできたら,次はプラグインのインストールの準備.</p>
+
+<p>プラグインのインストールにはSublime Package Controlが便利すぎるのでまずそれをインストールする.</p>
+<pre>
+ctrl + shift + @
+</pre>
+<p>でコンソールを開き,</p>
+<pre>
+import urllib2,os; pf='Package Control.sublime-package';ipp=sublime.installed_packages_path(); os.makedirs(ipp) if not os.path.exists(ipp) else None; urllib2.install_opener(urllib2.build_opener(urllib2.ProxyHandler())); open(os.path.join(ipp,pf),'wb').write(urllib2.urlopen('http://sublime.wbond.net/'+pf.replace(' ','%20')).read()); print 'Please restart Sublime Text to finish installation'
+</pre>
+<p>これをそのままコピーアンドペースト で、実行されたのを確認したら再起動する.</p>
+
+<p>Package Controlは</p>
+<pre>
+Command + Shift + p
+</pre>
+<p>でCommand Pallet開き,その後, installとタイプすると起動する.</p>
+
+<p>ここでSublimeTextにインストールするプラグインなどを検索し、その場でインストールが出来ます.(便利！)</p>
+
+<h1 id='id45'>覚えておきたいショートカット</h1>
+<pre>
+Command + Shift + p
+</pre>
+<p>さっきも書いたんですがこれを起動することでSublimeTextにインストールされた機能(package control含む)や,snippetなどの検索ができます</p>
+<img src='/images/sublime_1.png' /><pre>
+ Command + Shift + f
+</pre>
+<p>プロジェクト内検索, 結果はこんなかんじで帰ってきます</p>
+<img src='/images/sublime_2.png' /><pre>
+  Command + Ctrl + ↓ or ↑
+</pre>
+<p>選択した範囲を動かせます</p>
+<pre>
+  Command + /
+</pre>
+<p>選択範囲(選択していない場合はカーソルのある行)をコメントアウトorインします</p>
+<pre>
+  Command + Option + 2
+</pre>
+<p>windowを縦に分割(Command + Option + 1で元に戻す)</p>
+<pre>
+  Command + Ctrl + f
+</pre>
+<p>フルスクリーンモード, 個人的に見やすくて好きです</p>
+<pre>
+  Command + p
+</pre>
+<p>でいま開いているファイル一覧が検索でき,開ける</p>
+<pre>
+  Command + r
+</pre>
+<p>でファイル内の関数に飛べる ちなみに@を#または.に変えるとhtmlならそれぞれidまたはclass一覧が検索出来る</p>
+
+<p>などなど.. もっと詳しくは<a href='http://kachibito.net/software/sublime-text-2-shortcuts.html'>こちらの方</a>も(windows版です)とても詳しく紹介されているので参考までに.</p>
+
+<h1 id='id46'>おすすめのプラグインなどなど</h1>
+
+<p>packege controlからインストールできるプラグイン,テーマなどを紹介します</p>
+
+<h3 id='htmlcssjavascript'>html,css,javascript関連</h3>
+
+<p>- <strong>HTML5</strong></p>
+
+<pre><code>    html5のsnippet,自動補完,シンタックスハイライトなど.</code></pre>
+<hr />
+<p>- <strong>jQuery</strong></p>
+
+<pre><code>    jQueryのsnippet,自動補完,シンタックスハイライトなど.</code></pre>
+<hr />
+<p>- <strong>CSS snippet</strong></p>
+
+<pre><code>    CSSのsnippet,自動補完,シンタックスハイライトなど.
+    CSS3にも対応しています
+
+    試しにaniと打ってtabを押すと
+
+    &lt;img src=&quot;/images/sublime_3.png&quot; alt=&quot;&quot;&gt;
+
+    こんな感じに書くブラウザごとの記述を一気に出してくれ,またそれらを同時に編集できます</code></pre>
+<hr />
+<p>- <strong>CoffeeCompile</strong></p>
+
+<pre><code>    Command + Shift + cでcoffee scriptをjsにコンパイル,同じ階層にjsファイルを作る</code></pre>
+<hr />
+<p>- <strong>ZenCoding</strong></p>
+
+<pre><code>    ZenCodingをインストールします.これは絶対入れるべき!
+    マークアップの速度が2倍ぐらいになります
+
+    Zencodingは便利なので[ここ](http://code.google.com/p/zen-coding/)とかをみるといいかも</code></pre>
+<hr />
+<p>- <strong>Tag</strong></p>
+
+<pre><code>    HTML関連の機能の追加.
+    タグのインデントなどを追加.スラッシュでタグを閉じるなどなど</code></pre>
+<hr />
+<p>- <strong>Sass</strong></p>
+
+<pre><code>    Sassのシンタックスハイライト</code></pre>
+<hr />
+<p>- <strong>Twitter Bootstrap Snippets</strong></p>
+
+<pre><code>    [TwitterBootstrap](http://twitter.github.com/bootstrap/)のsnippet.
+
+    便利です. コマンド一つ叩くだけでtwitterBootstrapによるサイトができてしまいます
+
+    コマンド一覧はインストール後,command palletからbootstrapと打って検索できます</code></pre>
+<hr />
+<h3 id='programming'>programming言語,開発環境関連</h3>
+
+<p>- <strong>SublimeLinter</strong></p>
+
+<pre><code>  ruby,php,javascript,html,cssなど様々な言語のシンタックスをチェックしてくれます.
+
+  間違っている場所は
+
+  &lt;img src=&quot;/images/sublime_4.png&quot; alt=&quot;&quot;&gt;
+
+  こんな感じで四角でかこって表示してくれます(図はcoffee script)
+
+  javascriptなどは設定が必要なので
+  [こちらのサイト](http://perl.no-tubo.net/2012/05/03/mac%E3%81%AE%E3%83%86%E3%82%AD%E3%82%B9%E3%83%88%E3%82%A8%E3%83%87%E3%82%A3%E3%82%BF-sublime-text2%E3%81%A7javascript%E3%81%AE%E3%82%B7%E3%83%B3%E3%82%BF%E3%83%83%E3%82%AF%E3%82%B9%E3%82%A8%E3%83%A9/)
+  などが参考になります</code></pre>
+<hr />
+<p>- <strong>RSpec (snippets and syntax)</strong></p>
+
+<pre><code>  Rspecのsnippetとシンタックスハイライト.</code></pre>
+<hr />
+<p>- <strong>Git</strong></p>
+
+<pre><code>command palletからGitが操作できます(Gitのinstallは予め必要です)</code></pre>
+<hr />
+<p>- <strong>SideBarEnhancements</strong></p>
+
+<pre><code>View → Side Barで出せるSideBarの機能を追加します,
+
+SublimeTextの残念なところとしてSideBarの機能がまだほとんど動いていない(バグ?)のでこれは必須です.</code></pre>
+<hr />
+<h3 id='id47'>その他</h3>
+
+<p>- <strong>Terminal</strong></p>
+
+<pre><code>Command + Shift + t でterminalが開けます,それだけです</code></pre>
+<hr />
+<p>- <strong>Markdown Preview</strong></p>
+
+<pre><code>SublimeTextで編集中のmarkdownをブラウザでpreviewすることができます</code></pre>
+<hr />
+<p>- <strong>Sublime Tweet</strong></p>
+
+<pre><code>Command palletからtweetすることができたりタイムラインを見たりできます.</code></pre>
+<hr />
+<p>まだまだ沢山のプラグインがありますが,いまボクがメインで使っているものを紹介してみました.</p>
+
+<h3 id='id48'>テーマ</h3>
+
+<p>SublimeTextはテーマとカラースキームを簡単に変えることができます.</p>
+
+<p>カラースキームはシンタックスハイライトの色を変えるもの, テーマはSublimeText全体の色合いを変えるもの,という感じです.</p>
+
+<p>どちらもpackage managerから入れることができ,簡単です.</p>
+
+<p>カラースキームは上部メニューのSublimeText2から, Preference →　ColorScheme　 で変更することができます.</p>
+
+<p>テーマは少し違い,テーマをインストールしたら Preference → Settings Userから編集します</p>
+
+<p>そこにダウンロードしたテーマの名前を記述します.</p>
+<pre>"theme": "Soda Dark.sublime-theme",</pre>
+<p>こんな感じです</p>
+
+<p>ボクの使ってるテーマはこんな感じです</p>
+<img alt='theme' src='/images/sublime_5.png' />
+<h1 id='id49'>キーバインド</h1>
+
+<p>SublimeTextはキーバインドも一つの設定ファイルで管理するので,自由にキーバインドを増やすor変えることができます.</p>
+
+<p>SublimeText2 → Preference → Key Bindings - User　から設定できます.</p>
+
+<p>Key Bindings - Defaultも変えることができますが,その場合はUserの方で上書きするほうが良いと思います.</p>
+
+<p>僕自身それほど設定をしているわけではないのですが設定しているのは,</p>
+<pre>
+  // タブの切替を表示順にする
+  { "keys": ["ctrl+tab"], "command": "next_view" },
+  { "keys": ["ctrl+shift+tab"], "command": "prev_view" }
+  </pre>
+<p>SublimeTextはなぜかタブの切替が表示されている順番でないので,これで設定しています.</p>
+
+<p>このように簡単に設定が行えるので,ぜひやってみましょう.</p>
+
+<h1 id='tips'>Tips</h1>
+
+<p>- 設定の同期</p>
+
+<pre><code>SublimeTextの設定はすべて
+&lt;pre&gt;
+~/Library/Application Support/Sublime Text 2/
+&lt;/pre&gt;
+に保存されているので,複数のPCで設定を引き継ぎたい場合はこれらのファイルを同期させればよい.</code></pre>
+
+<ul>
+<li>
+<p>Vim操作を使う</p>
+
+<p>Vim風操作(nomalモードとinsertモードなど)が使いたい場合は Settings -Defaultの最後の行の</p>
+<pre>"ignored_packages": ['vintage']</pre><pre>"ignored_packages": []</pre></li>
+</ul>
+
+<p>長くなりましたがこんな感じで多機能で使えやすいエディタであるのではないでしょうか.</p>
+
+<p>主にフロントサイドエンジニアに人気なようですがバックエンドエンジニアでも遜色なく使えるのでは,と思います.</p>
+
+<p>ぜひ一度試してみてはいかがでしょう！</p>
+  </div>
+</article>
+
+        <div class='footer'>
+  <div class='footer_inner'>
+    <section>
+      <div class='block'>
+        <a href=''><span class='icon-twitter-3 round'></span></a>
+      </div>
+      <div class='block'>
+        <a href=''><span class='icon-facebook round'></span></a>
+      </div>
+      <div class='block'>
+        <a href=''><span class='icon-github-02 round'></span></a>
+      </div>
+    </section>
+  </div>
+</div>
+
+      </div>
+    </div>
+  </body>
+</html>

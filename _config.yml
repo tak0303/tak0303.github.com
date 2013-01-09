@@ -1,0 +1,17 @@
+# standard jekyll configuration
+auto: true
+server: true
+markdown: maruku
+
+safe: false
+lsi: false
+
+permalink: date
+pygments: true
+exclude: ['Rakefile', 'README.md', 'config.rb']
+
+domain: tak0303.github.com
+email: tak1240@gmail.com
+
+github:
+  username: tak0303

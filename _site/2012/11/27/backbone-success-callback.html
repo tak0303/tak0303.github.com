@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html>
+  <head>
+  <meta content='text/html; charset=utf8' http-equiv='Content-Type' />
+  <title>tak0303 | Backbone.Collectionのfetch methodでstatus codeは200なのにerror</title>
+  <meta content='hogehoge' name='description' />
+  <link href='/assets/css/main.css' rel='stylesheet' />
+  <link href='/assets/css/pygments.css' rel='stylesheet' />
+  <link href='http://fonts.googleapis.com/css?family=Open+Sans:400,300' rel='stylesheet' />
+  <link href='/assets/css/pictonic.css' rel='stylesheet' />
+  <!--[if IE]>
+    <script src='/assets/js/pictonic.min.js'></script>
+  <![endif]-->
+</head>
+
+  <body>
+    <div id='header'>
+  <div class='container_header'>
+    <section class='name'><a href='/'>
+      tak
+      <span>0303</span>
+    </a></section>
+    <ul class='menu'>
+      <!-- / you can add links with just copy -->
+      <li>
+        <a href='/about.html'>about</a>
+      </li>
+    </ul>
+  </div>
+</div>
+
+    <div id='content'>
+      <div class='container'>
+        <article class='post_article'>
+  <h2 class='post_title'>Backbone.Collectionのfetch methodでstatus codeは200なのにerror</h2>
+  
+  <div class='postdate'>Posted on Nov 27 2012</div>
+  
+  <div class='article_body'>
+    <p>Backbone.jsを使っていてあれ？ってなったこととその解決方法</p>
+
+<p>Backbone.Collectionを使ってJavaScriptソース内のマジックナンバーの定数、エラー表示の文章などをjsonから取り出すものを作っていた。</p>
+<div class='highlight'><pre><code class='coffeescript'><span class='nx'>Backbone</span><span class='p'>.</span><span class='nx'>Config</span> <span class='k'>extends</span> <span class='nx'>Backbone</span><span class='p'>.</span><span class='nx'>Collection</span>
+  <span class='nv'>url: </span><span class='s'>&#39;hogehoge/piyo.json&#39;</span>
+
+  <span class='nv'>load: </span><span class='nf'>-&gt;</span>
+    <span class='nx'>@fetch</span>
+      <span class='nv'>success: </span><span class='nf'>(data) -&gt;</span>
+        <span class='nx'>alert</span> <span class='s'>&#39;hoge&#39;</span>
+      <span class='nv'>error: </span><span class='p'>(</span><span class='nx'>data</span><span class='p'>)</span>
+        <span class='nx'>alert</span> <span class='s'>&#39;piyo&#39;</span>
+</code></pre></div>
+<p>ざっくりこんな感じでjsonファイルにアクセスして、そこからデータを引っ張ってこようと思ってた。</p>
+
+<p>でも<code>@fetch</code>のcallbackがずっとerrorに飛ばされて？って感じになっていた。</p>
+
+<p><code>data.status</code> を見ても200なのでrequest自体はちゃんと通ってる、なのにerror。なにこれって思っていたら。</p>
+
+<p><a href='&quot;http://stackoverflow.com/questions/10674564/backbone-js-save-method-always-return-error-callback&quot;'>Backbone.js: Save Method Always Return Error Callback</a></p>
+
+<p>こんなものが。</p>
+
+<p>つまり、successが呼ばれる条件？は<code>status code</code>が200で、かつ帰ってくるjsonのsybtaxが正しい(valid json)こと。</p>
+
+<p>そんな馬鹿な、と思ってjsonファイルを見直すと、ミスってた。 , が一個多かった。</p>
+
+<p>まぁsuccessにいく条件がちょっとわかったし、よしとするか！！</p>
+
+<p>泣きたい</p>
+  </div>
+</article>
+
+        
+        <div class='footer'>
+  <div class='footer_inner'>
+    <section>
+      <div class='block'>
+        <a href='https://twitter.com/tak0303' target='blank'><span class='icon-twitter-3 round'></span>
+        <div class='comment'>follow me on twitter</div></a>
+      </div>
+      <div class='block'>
+        <a href='https://www.facebook.com/takashi.nakagawa.796' target='blank'><span class='icon-facebook round'></span>
+        <div class='comment'>contact me on facebook</div></a>
+      </div>
+      <div class='block'>
+        <a href='https://github.com/tak0303' target='blank'><span class='icon-github-02 round'></span>
+        <div class='comment'>fork me on github</div></a>
+      </div>
+    </section>
+  </div>
+</div>
+
+        
+      </div>
+    </div>
+  </body>
+</html>
