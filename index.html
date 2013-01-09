@@ -1,4 +1,7 @@
+---
 layout: default
+---
+
 {% for post in site.posts %}
 {% capture date %}{{ post.date }}{% endcapture %}
 {% capture this_year %}{{ date | date: "%Y" }}{% endcapture %}
