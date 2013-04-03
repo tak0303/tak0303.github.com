@@ -4,7 +4,7 @@ title: 東京に1ヶ月半いました
 tags: [programming, life]
 ---
 
-<img src="/image/beatrobo.png" alt="beatrobo">
+<img src="/images/beatrobo.png" alt="beatrobo">
 
 2月の初めから一昨日ぐらいまで、東京のBeatrobo(https://beatrobo.com)というところでアルバイト(インターン?)をしていました。
 
