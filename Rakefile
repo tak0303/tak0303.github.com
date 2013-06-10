@@ -28,7 +28,7 @@ desc "Launch preview environment"
 task :preview do
   Rake::Task["parse_haml"].invoke
   compass
-  system "jekyll --auto --server"
+  system "jekyll server --watch"
 end
 
 desc "Build site"
